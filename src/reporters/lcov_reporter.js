@@ -1,10 +1,10 @@
 //lcov_reporter
-(function (){
+(function(){
     //takes the option: toHTML {boolean}
 
     var body = document.body,
-        appendHtml = function(filename,data,toHTML) {
-            var str="";
+        appendHtml = function(filename, data, toHTML) {
+            var str = "";
             str += 'SF:' + filename + '\n';
     
             data.source.forEach(function(line, num) {
@@ -18,7 +18,7 @@
     
             str += 'end_of_record\n';
            
-            if (toHTML){
+            if (toHTML) {
                 var div = document.createElement('div');
                 div.className = "blanket_lcov_reporter";
                 div.innerText = str;
@@ -28,7 +28,7 @@
             }
         };
 
-    blanket.customReporter = function(coverageData,options) {
+    blanket.customReporter = function(coverageData, options) {
         var toHTML,
             defaultReporter;
         
